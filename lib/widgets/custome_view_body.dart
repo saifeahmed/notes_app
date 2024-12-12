@@ -8,15 +8,15 @@ class CustomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(26),
+      padding: const EdgeInsets.symmetric(horizontal: 26),
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 40),
             child: CustomAppBar(),
           ),
           SizedBox(
-            height: 20,
+            height: 40,
           ),
           Expanded(child: ListNotes())
         ],
