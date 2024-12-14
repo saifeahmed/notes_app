@@ -13,7 +13,10 @@ class CustomeViewBody extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 40),
-            child: CustomAppBar(),
+            child: CustomAppBar(
+              title: "Notes",
+              icon: Icons.search,
+            ),
           ),
           SizedBox(
             height: 40,
