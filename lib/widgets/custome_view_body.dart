@@ -7,12 +7,12 @@ class CustomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 26),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 26),
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 40),
+            padding: EdgeInsets.only(top: 40),
             child: CustomAppBar(
               title: "Notes",
               icon: Icons.search,
@@ -34,8 +34,8 @@ class ListNotes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (context, index) {
-      return Padding(
-        padding: const EdgeInsets.only(bottom: 10),
+      return const Padding(
+        padding: EdgeInsets.only(bottom: 10),
         child: CustomNote(),
       );
     });

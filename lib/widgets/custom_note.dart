@@ -9,11 +9,11 @@ class CustomNote extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return EditNoteView();
+          return const EditNoteView();
         }));
       },
       child: Container(
-        padding: EdgeInsets.only(left: 12),
+        padding: const EdgeInsets.only(left: 12),
         decoration: BoxDecoration(
           color: Colors.amber[300],
           borderRadius: BorderRadius.circular(16),
@@ -22,8 +22,8 @@ class CustomNote extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title: Padding(
-                padding: const EdgeInsets.all(8.0),
+              title: const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   "Note name",
                   style: TextStyle(color: Colors.black, fontSize: 32),
@@ -37,7 +37,7 @@ class CustomNote extends StatelessWidget {
                       color: Colors.black.withOpacity(0.5), fontSize: 20),
                 ),
               ),
-              trailing: Icon(
+              trailing: const Icon(
                 size: 35,
                 Icons.delete_rounded,
                 color: Colors.black,

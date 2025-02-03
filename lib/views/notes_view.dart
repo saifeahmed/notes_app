@@ -18,14 +18,14 @@ class NotesView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16)),
                 context: context,
                 builder: (context) {
-                  return AddBottomSheat();
+                  return const AddBottomSheat();
                 });
           },
-          child: Icon(Icons.add),
           backgroundColor: Colors.blue,
+          child: Icon(Icons.add),
         ),
       ),
-      body: CustomeViewBody(),
+      body: const CustomeViewBody(),
     );
   }
 }

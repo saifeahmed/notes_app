@@ -7,8 +7,8 @@ class AddBottomSheat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
+    return const Padding(
+      padding: EdgeInsets.all(20),
       child: SingleChildScrollView(
         child: Column(children: [
           SizedBox(
