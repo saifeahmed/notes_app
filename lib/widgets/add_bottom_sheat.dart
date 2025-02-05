@@ -10,29 +10,66 @@ class AddBottomSheat extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.all(20),
       child: SingleChildScrollView(
-        child: Column(children: [
-          SizedBox(
-            height: 16,
-          ),
-          CustomTextField(
-            hint: "title",
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          CustomTextField(
-            hint: "content",
-            maxlines: 10,
-          ),
-          SizedBox(
-            height: 200,
-          ),
-          CustomButton(),
-          SizedBox(
-            height: 20,
-          ),
-        ]),
+        child: AddNoteForm(),
       ),
+    );
+  }
+}
+
+class AddNoteForm extends StatefulWidget {
+  const AddNoteForm({
+    super.key,
+  });
+
+  @override
+  State<AddNoteForm> createState() => _AddNoteFormState();
+}
+
+class _AddNoteFormState extends State<AddNoteForm> {
+  String? title, subtitle;
+  final GlobalKey<FormState> formkey = GlobalKey();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: formkey,
+      child: Column(children: [
+        SizedBox(
+          height: 16,
+        ),
+        CustomTextField(
+          onsaved: (value) {
+            title = value;
+          },
+          hint: "title",
+        ),
+        SizedBox(
+          height: 16,
+        ),
+        CustomTextField(
+          onsaved: (value) {
+            subtitle = value;
+          },
+          hint: "content",
+          maxlines: 10,
+        ),
+        SizedBox(
+          height: 200,
+        ),
+        CustomButton(
+          ontap: () {
+            if (formkey.currentState!.validate()) {
+              formkey.currentState!.save();
+            } else {
+              autovalidateMode = AutovalidateMode.always;
+              setState(() {});
+            }
+          },
+        ),
+        SizedBox(
+          height: 20,
+        ),
+      ]),
     );
   }
 }
